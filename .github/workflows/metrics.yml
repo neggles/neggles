@@ -21,6 +21,7 @@ jobs:
           commits_authoring: .user.login, neg2led
           config_octicon: yes
           config_timezone: Australia/Melbourne
+          config_display: columns
           plugin_habits: yes
           plugin_habits_charts_type: chartist
           plugin_habits_days: 14
