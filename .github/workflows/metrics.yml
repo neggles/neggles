@@ -7,6 +7,10 @@ on:
       - main
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   metrics:
     runs-on: ubuntu-latest
@@ -22,15 +26,16 @@ jobs:
           commits_authoring: .user.login, neg2led
           config_octicon: yes
           config_timezone: Australia/Melbourne
-          config_display: columns
+          config_display: large
           plugin_activity: yes
           plugin_activity_days: 14
           plugin_activity_filter: all
           plugin_activity_limit: 5
           plugin_activity_load: 300
+          plugin_activity_skipped: neggles. neg2led.github.io
           plugin_activity_visibility: all
           plugin_habits: yes
-          plugin_habits_charts_type: chartist
+          plugin_habits_charts_type: classic
           plugin_habits_days: 14
           plugin_habits_facts: yes
           plugin_habits_from: 200
